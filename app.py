@@ -59,7 +59,7 @@ def main():
 
         return jsonify(respuesta)
     except:
-        return {"error": "Tuvimos un problema"}
+        return {"error": "We've had a problem"}
 
 if __name__ == "__main__":
     app.run()
