@@ -49,7 +49,7 @@ function enviarApi(){
         }})
         .then(json=>{
             console.log(json)
-            d3.select("#respuesta").text(`Estimación: ${json.etiqueta}`)
+            d3.select("#respuesta").text(`Predict: ${json.etiqueta}`)
         })
 
 }

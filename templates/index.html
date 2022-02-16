@@ -14,9 +14,25 @@
     <p>Have Fun! and visit my webpage: <a href = "https://axiom-of-choice.herokuapp.com/">I'm the link</a></p>
     <canvas id="canvas"></canvas>
     <hr>
-    <button onclick="resize()">Limpiar</button>
-    <button onclick="enviarApi()">Convertir en número</button>
+    <button onclick="resize()">Clean</button>
+    <button onclick="enviarApi()">Convert into number</button>
     <h3 id="respuesta" style="visibility: hidden;"></h3>
+    <input type=”radio”
+    name”negative”
+    value=”no”>
+         No
+    </input>
+    <input type=”radio” 
+       name”affirmative”
+       value=”yes”
+       checked>
+            Yes
+    </input>
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        Name: <input type="text" name="fname">
+        <input type="submit" value="Submit">
+    </form>
+
 </body>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="static/js/logic.js"></script>
