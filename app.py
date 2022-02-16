@@ -2,12 +2,23 @@ import base64, secrets, io, os
 from PIL import Image,ImageOps
 from urllib.request import urlopen
 
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect
 import numpy as np
 
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
+
+import psycopg2
+import psycopg2.extras
+
+
+##Env variables
+import os
+from dotenv import load_dotenv
+load_dotenv()
+conn = psycopg2.connect(dbname=os.environ['DB_NAME'], user=os.environ['DB_USER'], password=os.environ['DB_PASS'], 
+                        host=os.environ['DB_HOST'])
 
 model = load_model("./procesamiento/mnist_trained.h5")
 
@@ -60,6 +71,19 @@ def main():
         return jsonify(respuesta)
     except:
         return {"error": "We've had a problem"}
+    
+@app.route('/post_result', methods = ['POST'])
+def postrecords():
+    cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    if request.method == 'POST':
+        try:
+            print('Posting data')
+            ##search_word = request.form['query']
+            ##print(search_word)
+            
+        except:
+            pass
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run()
