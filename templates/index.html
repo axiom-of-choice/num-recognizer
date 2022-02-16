@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/style.css">
-    <title>mnist demo</title>
+    <title>MNIST prediction APP</title>
 </head>
 <body>
     <h1>Hello! Try my app.</h1>
@@ -17,19 +17,8 @@
     <button onclick="resize()">Clean</button>
     <button onclick="enviarApi()">Convert into number</button>
     <h3 id="respuesta" style="visibility: hidden;"></h3>
-    <input type=”radio”
-    name”negative”
-    value=”no”>
-         No
-    </input>
-    <input type=”radio” 
-       name”affirmative”
-       value=”yes”
-       checked>
-            Yes
-    </input>
     <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-        Name: <input type="text" name="fname">
+        Correct Prediction: <input type="text" name="fname">
         <input type="submit" value="Submit">
     </form>
 
