@@ -21,6 +21,7 @@ gast==0.4.0
 google-auth==2.3.2
 google-auth-oauthlib==0.4.6
 google-pasta==0.2.0
+greenlet==1.1.2
 grpcio==1.41.1
 gunicorn==20.1.0
 h5py==3.1.0
@@ -60,6 +61,7 @@ parso==0.8.2
 pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==8.4.0
+pkg_resources==0.0.0
 prometheus-client==0.11.0
 prompt-toolkit==3.0.21
 protobuf==3.19.0
@@ -72,6 +74,7 @@ Pygments==2.10.0
 pyparsing==3.0.3
 pyrsistent==0.18.0
 python-dateutil==2.8.2
+python-dotenv==0.19.2
 pyzmq==22.3.0
 qtconsole==5.1.1
 QtPy==1.11.2
@@ -83,6 +86,7 @@ scipy==1.7.1
 Send2Trash==1.8.0
 six==1.15.0
 sklearn==0.0
+SQLAlchemy==1.4.31
 tensorboard==2.7.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.0
