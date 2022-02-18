@@ -80,7 +80,7 @@ def post_result():
         correct = request.form['query']
         print(correct)
         print('Posting data')
-        cur.execute('''INSERT INTO correct_classification_test values (%s %s %s)''', (predicted, correct, im))
+        ##cur.execute('''INSERT INTO correct_classification_test values (%s %s %s)''', (predicted, correct, im))
         ##search_word = request.form['query']
         ##print(search_word)
     except:
