@@ -73,16 +73,18 @@ def main():
         return {"error": "We've had a problem"}
     
 @app.route('/post_result', methods = ['POST'])
-def postrecords():
+def post_result():
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-    if request.method == 'POST':
-        try:
-            print('Posting data')
-            ##search_word = request.form['query']
-            ##print(search_word)
-            
-        except:
-            pass
+##if request.method == 'POST':
+    try:
+        correct = request.form['query']
+        print(correct)
+        print('Posting data')
+        ##cur.execute('''INSERT INTO correct_classification_test values (%s %s %s)''', (predicted, correct, im))
+        ##search_word = request.form['query']
+        ##print(search_word)
+    except:
+        pass
     return render_template("index.html")
 
 if __name__ == "__main__":
