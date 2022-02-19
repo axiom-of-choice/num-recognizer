@@ -16,12 +16,14 @@
     <hr>
     <button onclick="resize()">Clean</button>
     <button onclick="enviarApi()">Convert into number</button>
-    <h3 id="respuesta" style="visibility: hidden;"></h3>
-    <form name="myForm" action="/post_result" onsubmit="return validateForm()" method="post">
-        Correct Prediction: <input type="text" name="fname">
-        <input type="submit" value="Submit">
+    <form name="predicted" method="post" action="/post_result">
+        <h3 id="respuesta" style="visibility: hidden;" name="'predicted"></h3>
     </form>
-
+    <form name="correct" action="/post_result" method="post">
+        Correct Prediction: <input type="text" name="correct">
+        <input type="submit" value="Submit">
+        <p></p>
+    </form>
 </body>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="static/js/logic.js"></script>
