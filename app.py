@@ -2,7 +2,7 @@ import base64, secrets, io, os
 from PIL import Image,ImageOps
 from urllib.request import urlopen
 
-from flask import Flask, request, jsonify, render_template, redirect
+from flask import Flask, request, jsonify, render_template, redirect, url_for
 import numpy as np
 
 from tensorflow.keras.preprocessing.image import img_to_array
@@ -72,25 +72,24 @@ def main():
     except:
         return {"error": "We've had a problem"}
     
-@app.route('/post_result', methods = ['POST'])
+@app.route('/post_result', methods = ['GET','POST'])
 def post_result():
     cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-##if request.method == 'POST':
-    try:
-        correct = request.form['query']
-        print(correct)
-        print('Posting data')
-        ##cur.execute('''INSERT INTO correct_classification_test values (%s %s %s)''', (predicted, correct, im))
-        ##search_word = request.form['query']
-        ##print(search_word)
-    except:
-        pass
+    if request.method == 'POST':
+        try:
+            correct = request.form['correct']
+            print(correct)
+            print('Posting data')
+            api_response = request.form['predicted']
+            print(api_response)
+            ##cur.execute('''INSERT INTO correct_classification_test values (%s %s %s)''', (predicted, correct, im))
+        except:
+            pass
+        return redirect(url_for('index'))
     return render_template("index.html")
 
 if __name__ == "__main__":
     app.run()
-
-
 
 
 
